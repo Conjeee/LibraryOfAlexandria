@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "346850249688",
+    "firebase_url": "https://libraryofalexandria-26f95-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "libraryofalexandria-26f95",
+    "storage_bucket": "libraryofalexandria-26f95.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:346850249688:android:af6c3ad12f5bed55a8c0ad",
+        "android_client_info": {
+          "package_name": "com.example.libraryofalexandria"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "346850249688-90osveg122cvb3h5u940bj2bdettbelg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.libraryofalexandria",
+            "certificate_hash": "e4d4303a266a5430fcd3e782aa56b3b98d28a166"
+          }
+        },
+        {
+          "client_id": "346850249688-p1q0es4jg4inlngjnf0nsvlmvukb16tn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVtjsQT0gER8xbwiigB_jCD7rH4MFoIO0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "346850249688-p1q0es4jg4inlngjnf0nsvlmvukb16tn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
