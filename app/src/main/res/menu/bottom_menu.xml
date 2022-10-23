@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:title="Home"
+        android:id="@+id/home"
+        android:icon="@drawable/home"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:title="Followed"
+        android:id="@+id/followed"
+        android:icon="@drawable/followed"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:title="Personal Posts"
+        android:id="@+id/pposts"
+        android:icon="@drawable/pposts"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:title="Settings"
+        android:id="@+id/settings"
+        android:icon="@drawable/settings"
+        app:showAsAction="ifRoom"/>
+
+</menu>
