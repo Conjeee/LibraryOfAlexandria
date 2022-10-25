@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.libraryofalexandria.fragment.FollowedFragment;
@@ -86,17 +87,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.followed:
+            case R.id.search:
                 Toast.makeText(this, "Followed", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.home:
+            case R.id.filter:
                 Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.pposts:
-                Toast.makeText(this, "Personal Posts", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.settings:
-                Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
                 break;
             default:
                 return super.onOptionsItemSelected(item);

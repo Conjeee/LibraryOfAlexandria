@@ -2,6 +2,41 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:padding="10dp"
+        android:background="@drawable/button_bg"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sign in using your Google account"
+            android:textColor="@color/Text"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:id="@+id/google_signin"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_google_signin"
+            android:textColor="@color/Background"
+            android:text="Continue with Google"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/Text"
+            android:background="@drawable/button_bg"
+            android:minWidth="233dp"
+            android:padding="5dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            />
+
+    </LinearLayout>
 
 </LinearLayout>
