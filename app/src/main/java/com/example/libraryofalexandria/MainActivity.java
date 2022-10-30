@@ -37,8 +37,12 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
 
@@ -73,6 +77,8 @@ public class MainActivity extends AppCompatActivity {
         user = auth.getCurrentUser();
 
         userprofile_image = findViewById(R.id.user_profile_image);
+
+        getProfileImage();
 
         GoogleSignInOptions gsc = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
@@ -117,8 +123,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (user != null) {
-                    Toast.makeText(MainActivity.this, "User is signed in", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(MainActivity.this, AccountActivity.class));
+                    getProfileImage();
                 } else {
+                    userprofile_image.setImageResource(R.drawable.account_icon);
                     showDialog();
                 }
             }
@@ -214,5 +222,24 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
         return false;
+    }
+
+    private void getProfileImage() {
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Users");
+        reference.child(user.getUid()).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()) {
+                    String p = snapshot.child("profile").getValue().toString();
+                    Picasso.get().load(p).placeholder(R.drawable.account_icon)
+                            .into(userprofile_image);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(MainActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
